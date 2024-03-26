@@ -1,0 +1,250 @@
+:root {
+	--primary-color: #f4f4f4;
+	--secondary-color: #ff7f00;
+	--danger-color: #ff0000;
+	--dark-color: #333;
+	--light-color: #fff;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* GLOBAL */
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--primary-color);
+	font-family: "Arial", sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.6;
+	color: var(--dark-color);
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+a {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: var(--dark-color);
+}
+
+hr {
+	width: 35%;
+	margin: auto;
+	border-color: var(--secondary-color);
+}
+
+i {
+	color: var(--secondary-color);
+	font-size: 2.6rem;
+}
+
+/* MAIN */
+.active::after,
+header a:hover::after:not(h1 a) {
+	content: "";
+	position: absolute;
+	top: 28px;
+	left: .5rem;
+	width: calc(100% - .5rem * 2);
+	height: 2px;
+	background-color: var(--secondary-color);
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--light-color);
+}
+
+nav {
+	display: flex;
+	gap: 1.5rem;
+    margin-right: .5rem;
+    text-transform: uppercase;
+}
+
+nav a {
+	padding: .5rem;
+}
+
+h1{
+    line-height: normal;
+}
+
+h2,
+h3 {
+	text-align: center;
+}
+
+h1 img {
+	width: 120px;
+	height: 30px;
+}
+
+form, input {
+	width: 100%;	
+}
+
+input {
+	height: 40px;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-left: none;
+	border-right: none;
+	font-size: 2rem;
+	text-align: center;
+}
+
+input::placeholder {
+	color: #8e8e8e;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.wrapper {
+	margin: 2rem auto 3rem;
+    padding: 0 1rem;
+}
+
+.wrapper div {
+    display: flex;
+    gap: 1rem;
+    /* flex-wrap: nowrap;  ➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️*/
+    overflow-x: auto;
+}
+
+.wrapper h2 {
+	width: 100%;
+}
+
+.card {
+	position: relative;
+	flex-shrink: 0;
+	background-color: var(--light-color);
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	width: 150px;
+	margin: 1rem auto;
+}
+
+.card h3 {
+	margin: 1rem;
+	color: var(--dark-color);
+}
+
+.card img {
+	display: block;
+	width: 100%;
+	max-height: 150px;
+	object-fit: cover;
+}
+
+
+.card figcaption {
+    padding: .7rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.card figcaption:not(.promo-alert) {
+    color: var(--danger-color);
+}
+
+.card .promo-alert {
+    display: inline-block;
+    color: var(--primary-color);
+    background-color: var(--danger-color);
+    padding: .8rem;
+    border-radius: .5rem;
+    width: 50px;
+}
+
+footer {
+	padding: 2rem 0 1rem;
+	color: var(--primary-color);
+	background-color: var(--dark-color);
+	text-align: center;
+}
+
+aside {
+	display: flex;
+	gap: 3rem;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+footer nav {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	justify-content: center;
+	margin: 1rem;
+}
+
+footer nav a {
+	color: var(--primary-color);
+	margin: 0;
+	font-size: 1.4rem;
+}
+
+footer p {
+	margin: 2rem 0 0;
+}
+
+/************/
+/************/
+/************/
+
+/* création d'étiquette en haut à gauche de l'élément figure
+	avec 2 couches une rouges et une jaune superposées décalées
+*/
+.ctn-red {
+	position: absolute;
+	top: .5rem;
+	left: .5rem;
+	width: 25px;
+	height: 25px;
+	background-color: red;
+	border-bottom-right-radius: 1rem;
+	z-index: 9999;
+}
+
+.ctn-yellow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	background-color: yellow;
+	border-bottom-right-radius: 1rem;
+	z-index: 4444;
+}
+
+/* propriété order lié à la position flex 
+	permets de modifier l'ordre des éléments 
+	il faut cibler les éléments en questions et leur appliquer une valeur qui sera l'ordre voulu
+*/
+.ctn-1 {
+	order: 2;
+}
+.ctn-2 {
+	order: 3;
+}
+.ctn-3 {
+	order: 1;
+} 
