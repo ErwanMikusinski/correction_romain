@@ -123,7 +123,6 @@ input::placeholder {
 .wrapper div {
     display: flex;
     gap: 1rem;
-    /* flex-wrap: nowrap;  ➡️➡️➡️➡️➡️➡️➡️➡️➡️➡️*/
     overflow-x: auto;
 }
 
